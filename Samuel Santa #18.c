@@ -1,5 +1,5 @@
-/*- Fecha de publicación: 2023-09-03
-- Hora: 4:00 p.m
+/*- Fecha de publicación: 2023-09-24
+- Hora: 2:00 p.m
 - Versión de su código: 1.0
 - Autor. Ing(c) Samuel Santa Martínez
 - Nombre del lenguaje utilizado: C
@@ -24,12 +24,13 @@
 
 int main()
 {
-    int columna1 = 1, columna2 = 1, columna3 = 1, i = 1;//se declaran las variables necesarias para el programa, columna1, columna2 y columna3 para los valores de las columnas de la terna, i para las filas de la terna y que estas realicen su secuencia
+    int fila = 1, columna1 = 1, columna2 = 1, columna3 = 1;//se declaran las variables necesarias para el programa, fila para cada fila de las ternas, columna1, columna2 y columna3 para los valores de las columnas de la terna
 
     printf( "Ternas:\n");
 
-    do{
-        if( i % 3 == 0 ){
+    //se usa la variable fila para el ciclo do-while, se evalua si fila es menor a 10 y se incrementa en 1, esta para cada fila del diseño y para cambiar la secuencia cuando es necesario
+    do {
+        if( fila % 3 == 0 ){
             printf( "%i %i %i\n", columna1, columna2, columna3 );
             columna1++;
             columna2++;
@@ -40,8 +41,8 @@ int main()
             columna1++;
             columna3++;
         }//fin del if
-        i++;
-    }while( i < 10 );//fin del do-while
+        fila++;//se aumenta el valor de fila en 1
+    }while( fila < 10 );//fin del do-while
 
     return 0;
 }

@@ -1,5 +1,5 @@
-/*- Fecha de publicación: 2023-09-03
-- Hora: 4:00 p.m
+/*- Fecha de publicación: 2023-09-24
+- Hora: 2:00 p.m
 - Versión de su código: 1.0
 - Autor. Ing(c) Samuel Santa Martínez
 - Nombre del lenguaje utilizado: C
@@ -23,38 +23,45 @@ Z                 Z
 */
 #include <stdio.h>
 
+//se crea la función ImprimirLetras con un parámetro de tipo entero, cantidadDeLetras para imprimir las letras del diseño
+void ImprimirLetras( int cantidadDeLetras )
+{
+    do{
+        printf( "Z" );
+        cantidadDeLetras--;
+    }while( 1 <= cantidadDeLetras );
+}//fin de la función ImprimirLetras
+
+//se crea la función ImprimirEspacios con un parámetro de tipo entero, cantidadDeEspacios para imprimir los espacios de cada columna
+void ImprimirEspacios( int cantidadDeEspacios )
+{
+    while( 1 <= cantidadDeEspacios ){//no se hace uso de do-while para evitar que se imprima un espacio de mas en el ultimo llamado
+        printf( " " );
+        cantidadDeEspacios--;
+    }
+}//fin de la función ImprimirEspacios
+
 int main()
 {
-    int espaciosIniciales = 9, espaciosMedios = 1;//se declaran las variables necesarias para el programa, espaciosIniciales y espaciosMedios para la cantidad de espacios que se van a imprimir al inicio o medio de cada linea
+    int espaciosIniciales = 9, espaciosMedios = -1;//se declaran las variables necesarias para el programa, espaciosIniciales y espaciosMedios para la cantidad de espacios que se van a imprimir al inicio o medio de cada linea, espaciosMedios se inicia en -1 ya que en la primer fila no se requieren espacios medios, y de ahi en dalentante van aumentando de 2 en dos, ya en la segunda se requiere solo uno y en la tercera 3 y asi sucesivamente
 
-    //se crea el ciclo do-while para imprimir el diseño, se declaran las variables i, j y k, i para el numero de lineas, j para la cantidad de espacios al inicio de cada linea y k para la cantidad de letras P que se van a imprimir
-    int i = 1, j = 1, k = 1;
+    //se declara la variable fila para el ciclo do-while, se inicializa en 1, se evalua si fila es menor o igual a 10 y se incrementa en 1, esta para cada fila del diseño
+    int fila = 1;
     do{
-        while( j <= espaciosIniciales )//no se usa do-while porque no se necesita que se imprima al menos un espacio en la fila final
-        {
-            printf( " " );
-            j++;
+        ImprimirEspacios( espaciosIniciales );
+        ImprimirLetras( 1 );
+        ImprimirEspacios( espaciosMedios );
+
+        //se evalua si fila es diferente de 1 para imprimir la segunda Z al final de cada linea
+        if ( fila != 1 )
+        {            
+            ImprimirLetras( 1 );
         }
-
-        if( i != 1 )
-            printf( "Z" );
-
-        while( k <= espaciosMedios )//no se usa do-while porque no se necesita que se imprima al menos un espacio en la fila inicial
-        {
-            printf( " " );
-            k++;
-        }
-            
-
-        printf( "Z\n" );
-
+        printf( "\n" );
         espaciosIniciales--;
         espaciosMedios += 2;
-        i++;
-        //se reinician los valores de j y k para la siguiente linea
-        j = 1;
-        k = 1;
-    }while( i <= 10 );//fin del do-while
+        fila++;
+    }while( fila <= 10 );//fin del do-while
 
     return 0;
 }

@@ -1,5 +1,5 @@
-/*- Fecha de publicación: 2023-09-03
-- Hora: 4:00 p.m
+/*- Fecha de publicación: 2023-09-24
+- Hora: 2:00 p.m
 - Versión de su código: 1.0
 - Autor. Ing(c) Samuel Santa Martínez
 - Nombre del lenguaje utilizado: C
@@ -44,15 +44,14 @@ int VerificarResultados( int numero, int *contador, int *mayor, int *menor, int 
 
 //se crea la función ValidarNumero con un parámetro de tipo entero, numero
 int ValidarNumero( int numero )
-{  
-    if ( numero == 0 ) {//es necesario el uso del if, ya que con un do-while se haria este proceso almenos una vez asi no fuera necesario
+{   //se verifica si el numero es entero positivo
+    while( numero == 0 )//no es posible usar un do-while porque se haria este proceso almenos una vez asi no fuera necesario
+    {
         printf( "El número no puede ser cero.\nIngrese un número: " );
         scanf( "%i", &numero );//se le asigna a la variable numero el valor ingresado por el usuario
-        ValidarNumero( numero );//se llama a la función ValidarNumero para verificar si el numero es entero positivo
-    }//de lo contrario
-    else {
-        return numero; 
-    }//fin del if
+    }//fin del while
+
+    return numero;
     
 }//fin de la función ValidarNumero
 
@@ -60,7 +59,7 @@ int main()
 {   
     printf( "Este programa lee desde el teclado un grupo de 75 números, diferentes a cero e imprime:\n* Cantidad de números Mayores a 150\n* Número mayor y número menor encontrado en el grupo\n* Cantidad de Números negativos encontrados\n* Promedio de los Positivos Encontrados.\n" );
 
-    int numero=0, contador=0, numeroMayor=0, numeroMenor=__INT_MAX__, negativos=0, positivos=0, sumaPositivos=0, mayores150=0; //se crean las variables numero y contador de tipo entero con un valor conocido
+    int contador=0, numero=0, numeroMayor=0, numeroMenor=__INT_MAX__, negativos=0, positivos=0, sumaPositivos=0, mayores150=0;//se declaran las variables contador para el while, numero, numeroMayor, numeroMenor, negativos, positivos, sumaPositivos y mayores150 de tipo entero para clasificar los numeros ingresados
 
     do{
         printf( "Ingrese un número: " );

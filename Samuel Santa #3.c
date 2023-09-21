@@ -1,5 +1,5 @@
-/*- Fecha de publicación: 2023-09-03
-- Hora: 4:00 p.m
+/*- Fecha de publicación: 2023-09-24
+- Hora: 2:00 p.m
 - Versión de su código: 1.0
 - Autor. Ing(c) Samuel Santa Martínez
 - Nombre del lenguaje utilizado: C
@@ -13,8 +13,6 @@
 */
 #include <stdio.h>
 
-#include <stdio.h>
-
 int main()
 {    
     int primerValor = 2, segundoValor = 1, auxiliar = 0, cantidadDeTerminos = 0; //se declaran las variables necesarias para el programa, primerValor y segundoValor para los primeros valores de la serie, auxilar para ayudarnos en la formula usada para hallar los valores de la serie y cantidadDeTerminos para almacenar el numero de terminos ingresado por el usuario.
@@ -25,15 +23,15 @@ int main()
     
     printf( "Los primeros %i términos de la serie Lucas son: ", cantidadDeTerminos );
 
-    //se declara la variable i para el ciclo do-while, se inicializa en 0, se evalua si i es menor que cantidadDeTerminos y se incrementa en 1
-    int i = 0;
+    //se declara la variable contador para el ciclo do-while, se inicializa en 0, se evalua si contador es menor que cantidadDeTerminos y se incrementa en 1
+    int contador = 0;
     do{
         printf( "%i, ", primerValor );
         auxiliar= primerValor + segundoValor;
         primerValor= segundoValor;
         segundoValor= auxiliar;
-        i++;
-    }while ( i < cantidadDeTerminos );//fin del do-while
+        contador++;
+    }while ( contador < cantidadDeTerminos );//fin del do-while
 
     return 0;
 }

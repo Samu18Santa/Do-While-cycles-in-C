@@ -1,5 +1,5 @@
-/*- Fecha de publicación: 2023-09-03
-- Hora: 4:00 p.m
+/*- Fecha de publicación: 2023-09-24
+- Hora: 2:00 p.m
 - Versión de su código: 1.0
 - Autor. Ing(c) Samuel Santa Martínez
 - Nombre del lenguaje utilizado: C
@@ -24,22 +24,21 @@
 */
 #include <stdio.h>
 
-//se crea la función ImprimirA con dos parámetros de tipo entero, inicio y final
-void ImprimirA( int inicioA, int finalA )
+//se crea la función ImprimirLetras con un parámetro de tipo entero, cantidadDeLetras para imprimir las letras del diseño
+void ImprimirLetras( int cantidadDeLetras )
 {
-    while( inicioA <= finalA ){
+    do{
         printf( "A" );
-        inicioA++;
-    }
+        cantidadDeLetras--;
+    }while( 1 <= cantidadDeLetras );
 }
-
-//se crea la función ImprimirLetras con dos parámetros de tipo entero, inicio y final para imprimir los espacios de cada columna
-void ImprimirEspacios( int inicioEspacios, int finalEspacios )
+//se crea la función ImprimirEspacios con un parámetro de tipo entero, cantidadDeEspacios para imprimir los espacios de cada columna
+void ImprimirEspacios( int cantidadDeEspacios )
 {
-    while( inicioEspacios <= finalEspacios ){
+    do{
         printf( " " );
-        inicioEspacios++;
-    }
+        cantidadDeEspacios--;
+    }while( 1 <= cantidadDeEspacios );
 }//fin de la función ImprimirEspacios
 
 //se crea la funcion salto de linea debido a la restriccion de solo 4 usos de la funcion printf
@@ -50,29 +49,29 @@ void SaltoDeLinea()
 
 int  main()
 {
-    int fila = 1, espacios = 39;//se declaran las variables de tipo entero, fia que funciona como contador de las filas que se van a imprimir y espacios para la cantidad de espacios que se van a imprimir al inicio de cada fila
+    int fila = 1, cantidadDeEspacios = 39 ;//se declara la variable fila de tipo entero para las filas en los ciclos while y se inicializa en 1, ademas se declara la variable cantidaDeEspacios para la cantidad de espacios que se van a imprimir al inicio de cada fila y se le da el valor de 39
 
-    //se declara el ciclo do-while para imprimir las primeras 6 filas, se inicia con la variable fila en 1, se evalua si fila es menor o igual a 6 y se incrementa en 1
+    //se crea el ciclo do-while para imprimir las primeras 6 filas, se inicia con la variable fila en 1, se evalua si fila es menor o igual a 6 y se incrementa en 1, esta para cada fila del diseño
     do{
-        ImprimirEspacios( 1, espacios );
-        ImprimirA( 1, fila );
+        ImprimirEspacios( cantidadDeEspacios );
+        ImprimirLetras( fila );
         SaltoDeLinea();
+        cantidadDeEspacios--;
         fila++;
-        espacios--;
     }while( fila <= 6 );//fin del do-while
 
-    //se declara el ciclo do-while para imprimir las ultimas 5 filas, se inicia con la variable fila en 6, se evalua si fila es menor o igual a 1 y se incrementa en 1, esta para cada fila del diseño, ademas se le da a espcios el valor de 35 y se declara la variable cantidadA para la cantidad de letras A que se van a imprimir en cada fila respectivamente
+    //se crea el ciclo do-while para imprimir las ultimas 5 filas, se inicia con la variable fila en 6, se evalua si fila es menor o igual a 1 y se incrementa en 1, esta para cada fila del diseño, ademas se le da valor de 35 a la variable cantidadDeEspacios y se crea la variable cantidaDeLetras con un valor de 5 para la cantidad de letras A que se van a imprimir en cada fila respectivamente
 
-    espacios = 35;
-    int cantidadA = 5;
+    cantidadDeEspacios = 35;
+    int cantidaDeLetras = 5;
     
     do{
-        ImprimirEspacios( 1, espacios );
-        ImprimirA( 1, cantidadA );
+        ImprimirEspacios( cantidadDeEspacios );
+        ImprimirLetras( cantidaDeLetras );
         SaltoDeLinea();
+        cantidadDeEspacios++;
+        cantidaDeLetras--;
         fila++;
-        espacios++;
-        cantidadA--;
     }while ( fila <= 11 );//fin del do-while
 
     return 0;

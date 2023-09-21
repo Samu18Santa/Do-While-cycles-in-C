@@ -1,5 +1,5 @@
-/*- Fecha de publicación: 2023-09-03
-- Hora: 4:00 p.m
+/*- Fecha de publicación: 2023-09-24
+- Hora: 2:00 p.m
 - Versión de su código: 1.0
 - Autor. Ing(c) Samuel Santa Martínez
 - Nombre del lenguaje utilizado: C
@@ -11,7 +11,6 @@
 - El siguiente programa genera la suma de la serie de Taylor para cosh(x)
  Salvedad: El programa admite números enteros, para valores fuera de este rango no garantizamos su resultado
 */
-//Ejercicio 32
 
 #include <stdio.h>
 #include <math.h>

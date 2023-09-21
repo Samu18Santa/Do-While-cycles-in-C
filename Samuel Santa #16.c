@@ -1,5 +1,5 @@
-/*- Fecha de publicación: 2023-09-03
-- Hora: 4:00 p.m
+/*- Fecha de publicación: 2023-09-24
+- Hora: 2:00 p.m
 - Versión de su código: 1.0
 - Autor. Ing(c) Samuel Santa Martínez
 - Nombre del lenguaje utilizado: C
@@ -35,14 +35,13 @@ int Factorial( int numero )
 //se crea la función ValidarNumero con un parámetro de tipo entero, numero
 int ValidarNumero( int numero )
 {   //se verifica si el numero es entero positivo
-    if ( numero < 0 ) {//es necesario el uso del if, ya que con un do-while se haria este proceso almenos una vez asi no fuera necesario
+    while( numero < 0 )//no es posible usar un do-while porque se haria este proceso almenos una vez asi no fuera necesario
+    {
         printf( "El factorial de un número negativo no existe\nIngrese un numero entero positivo: " );
         scanf( "%i", &numero );//se le asigna a la variable numero el valor ingresado por el usuario
-        ValidarNumero( numero );//se llama a la función ValidarNumero para verificar si el numero es entero positivo
-    }//de lo contrario
-    else {
-        return numero; 
-    }//fin del if
+    }//fin del while
+
+    return numero;
     
 }//fin de la función ValidarNumero
 

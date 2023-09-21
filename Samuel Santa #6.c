@@ -1,5 +1,5 @@
-/*- Fecha de publicación: 2023-09-03
-- Hora: 4:00 p.m
+/*- Fecha de publicación: 2023-09-24
+- Hora: 2:00 p.m
 - Versión de su código: 1.0
 - Autor. Ing(c) Samuel Santa Martínez
 - Nombre del lenguaje utilizado: C
@@ -23,16 +23,16 @@ int main()
     
     printf( "Los primeros %i terminos de la serie de Padovan son: ", cantidadDeTerminos );
 
-    //se declara la variable i para el ciclo do-while, se inicializa en 0, se evalua si i es menor que cantidadDeTerminos y se incrementa en 1
-    int i = 0;
+    //se declara la variable contador para el ciclo do-while, se inicializa en 0, se evalua si contador es menor que cantidadDeTerminos y se incrementa en 1
+    int contador = 0;
     do{
         printf( "%i, ", primerValor );
         auxiliar = segundoValor + primerValor;
         primerValor = segundoValor;
         segundoValor = tecerValor;
         tecerValor = auxiliar;
-        i++;
-    }while ( i < cantidadDeTerminos );//fin del do-while
+        contador++;
+    }while ( contador < cantidadDeTerminos );//fin del do-while
 
     return 0;
 }

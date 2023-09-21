@@ -41,13 +41,13 @@ int main()
     printf( "Los primeros %i términos de la serie Catalán son: ", cantidadDeTerminos );
     
     long long int termino = 1;//se declara la variable termino de tipo long long int con un valor conocido con el primer termino de la serie
-    //se declara la variable i para el ciclo do-while, se inicializa en 1, se evalua si i es menor que cantidadDeTerminos y se incrementa en 1
-    long long int i = 1;
+    //se declara la variable contador para el ciclo do-while, se inicializa en 1, se evalua si contador es menor que cantidadDeTerminos y se incrementa en 1
+    long long int contador = 1;
     do{
         printf( "%lld, ", termino );//se imprime el valor de la variable termino.
-        termino = ( Factorial( ( i * 2 ) ) / ( ( Factorial( i ) * Factorial( ( i + 1 ) ) ) ) );//se le asigna a la variable termino el valor de la formula de la serie de Catalan        
-        i++;      
-    }while ( i <= cantidadDeTerminos );//fin del do-while
+        termino = ( Factorial( ( contador * 2 ) ) / ( ( Factorial( contador ) * Factorial( ( contador + 1 ) ) ) ) );//se le asigna a la variable termino el valor de la formula de la serie de Catalan        
+        contador++;      
+    }while ( contador <= cantidadDeTerminos );//fin del do-while
 
     return 0;
 }
