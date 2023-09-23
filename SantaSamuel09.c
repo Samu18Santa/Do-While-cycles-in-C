@@ -32,8 +32,6 @@ float Factorial( float numero )
     }//fin del if
 }//fin de la función Factorial
 
-
-
 //se crea la función Sumatoria con tres parámetros de tipo entero, k, termino,limite que se encarga de hacer la sumatoria necesaria para hallar cada termino de la serie
 float Sumatoria( int k, int termino, int limite )
 {

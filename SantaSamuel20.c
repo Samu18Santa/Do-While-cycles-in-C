@@ -60,7 +60,7 @@ int main()
     //se declara la variable fila para el ciclo do-while, se inicializa en 1, se evalua si fila es menor o igual a 25 y se incrementa en 1, esta para cada fila del diseño
     int fila = 1;
     do{
-        ImprimirEspacios( ( 79 - fila ) + 1 );
+        ImprimirEspacios( 80 - fila );
         ImprimirLetras( fila );
         printf( "\n" );
         fila++;

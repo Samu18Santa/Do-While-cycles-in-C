@@ -17,19 +17,14 @@ factoriales de todos los números desde 0 hasta el numero ingresado
 //se crea la función Factorial con un parámetro de tipo int, numero
 int Factorial( int numero )
 {    
-    if( numero == 0 ){
-        return 1;
-    }//de lo dontrario
-    else{
-        int resultado = 1;//se declara la variable resultado de tipo int con un valor de 1, siendo este el factorial de 0
-        int n = 1;//se declara la variable n para el ciclo do-while, se inicializa en 0, se evalua si n es menor que numero y se incrementa en 1
-        do{
-            resultado *= n;
-            n++;
-        }while (n <= numero);//fin del do-while
-        return resultado;
-    }//fin del if
-}//fin de la función Factorial
+    int resultado = 1;//se declara la variable resultado de tipo int con un valor de 1, siendo este el factorial de 0
+    int n = 1;//se declara la variable n para el ciclo do-while, se inicializa en 0, se evalua si n es menor que numero y se incrementa en 1
+    do{
+        resultado *= n;
+        n++;
+    }while (n <= numero);//fin del do-while
+    return resultado;
+}//fin de la función Factorial  
 
 
 //se crea la función ValidarNumero con un parámetro de tipo entero, numero

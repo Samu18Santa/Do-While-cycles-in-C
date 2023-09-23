@@ -23,10 +23,10 @@ PPPPPPPPPPPPP
 //se crea la función ImprimirLetras con dos parámetros de tipo entero, cantidadDeLetras para imprimir las letras del diseño,y ascii para realizar los cambios de la letra en cada linea
 void ImprimirLetras( int cantidadDeLetras, int ascii )
 {
-    do{
+    while( 1 <= cantidadDeLetras ){
         printf( "%c", ascii );
         cantidadDeLetras--;
-    }while( 1 <= cantidadDeLetras );
+    }
 }
 
 //se crea la función ImprimirEspacios con un parámetro de tipo entero, cantidadDeEspacios para imprimir los espacios de cada columna
